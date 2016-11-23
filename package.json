@@ -1,0 +1,34 @@
+{
+  "name": "mobile-sandbox",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/varbrad/mobile-sandbox",
+    "type": "git"
+  },
+  "author": "Brad Davies <varbrad@users.noreply.github.com>",
+  "license": "GPL-3.0",
+  "scripts": {
+    "bundle": "webpack -p",
+    "dev-server": "webpack-dev-server"
+  },
+  "dependencies": {
+    "vue": "^2.1.0",
+    "vue-resource": "^1.0.3",
+    "vue-router": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^3.13.0",
+    "pug": "^2.0.0-beta6",
+    "pug-loader": "^2.3.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
