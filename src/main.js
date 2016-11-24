@@ -1,3 +1,13 @@
-// const Vue = require('vue')
+require('./css/style.scss')
 
-console.log('es2015 now works, yay!')
+const Vue = require('vue')
+const VueRouter = require('vue-router')
+Vue.use(VueRouter)
+
+const vm = new Vue({
+  data: {
+    info: 123
+  }
+})
+
+vm.$mount('#app')

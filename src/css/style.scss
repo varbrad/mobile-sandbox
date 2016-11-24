@@ -6,8 +6,35 @@ html, body {
 }
 
 #app {
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+nav {
+  height: 3rem;
+  z-index: 2;
+
+  background-color: #E91E63;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+}
+
+main {
+  flex: 1;
+  overflow-y: scroll;
+  z-index: 1;
+
+  background-color: #F5F5F5;
+}
+
+footer {
+  height: 2rem;
+  z-index: 2;
+
+  background-color: #90A4AE;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, .1);
 }

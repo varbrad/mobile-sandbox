@@ -22,7 +22,7 @@
     </platform>
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="SplashScreenDelay" value="2000" />
-    <preference name="StatusBarBackgroundColor" value="#e64a19" />
+    <preference name="StatusBarBackgroundColor" value="#C2185B" />
     <plugin name="cordova-plugin-battery-status" />
     <plugin name="cordova-plugin-dialogs" />
     <plugin name="cordova-plugin-splashscreen" />

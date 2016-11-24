@@ -8,7 +8,7 @@
   "author": "Brad Davies <varbrad@users.noreply.github.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "bundle": "webpack -p",
+    "bundle": "webpack -p --progress",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
