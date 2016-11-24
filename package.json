@@ -9,7 +9,8 @@
   "license": "GPL-3.0",
   "scripts": {
     "bundle": "webpack -p --progress",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "android": "npm run bundle && cordova run android"
   },
   "dependencies": {
     "vue": "^2.1.0",
