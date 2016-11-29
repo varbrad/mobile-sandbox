@@ -13,6 +13,7 @@
     "android": "npm run bundle && cordova run android"
   },
   "dependencies": {
+    "chart.js": "^2.4.0",
     "vue": "^2.1.0",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.0.3"

@@ -3,10 +3,25 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     title Mobile Sandbox
   body
     #app
       nav
         .title App
       main
+        router-view
       footer
+        router-link(to="/accel" exact)
+          i.material-icons compare_arrows
+          br
+          | Accel
+        router-link(to="/chart" exact)
+          i.material-icons insert_chart
+          br
+          | Chart
+        router-link(to="/test2" exact)
+          i.material-icons code
+          br
+          | Code
+    script(src="cordova.js")

@@ -6,8 +6,27 @@ Vue.use(VueRouter)
 
 const vm = new Vue({
   data: {
-    info: 123
-  }
+    accel: {
+      x: 0,
+      y: 0,
+      z: 0,
+      sum: 0,
+      timestamp: null
+    }
+  },
+  router: new VueRouter({
+    routes: [
+      { path: '/', redirect: '/accel' },
+      { path: '/accel', component: require('./routes/accel') },
+      { path: '/chart', component: require('./routes/chart') }
+    ]
+  })
 })
 
-vm.$mount('#app')
+if (window.cordova) {
+  document.addEventListener('deviceready', () => {
+    vm.$mount('#app')
+  })
+} else {
+  vm.$mount('#app')
+}
