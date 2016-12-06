@@ -43,7 +43,7 @@ var chart = {
           pointRadius: 0,
           spanGaps: true,
           borderColor: 'rgba(255, 0, 0, .5)'
-        },{
+        }, {
           label: 'Y',
           data: [],
           lineTension: 0,
@@ -51,7 +51,7 @@ var chart = {
           pointRadius: 0,
           spanGaps: true,
           borderColor: 'rgba(0, 255, 0, .5)'
-        },{
+        }, {
           label: 'Z',
           data: [],
           lineTension: 0,
@@ -59,7 +59,7 @@ var chart = {
           pointRadius: 0,
           spanGaps: true,
           borderColor: 'rgba(0, 0, 255, .5)'
-        },{
+        }, {
           label: 'Movement',
           data: [],
           lineTension: 0,
@@ -74,14 +74,26 @@ var chart = {
     // Accel watcher
     if (navigator.accelerometer) {
       this.watcher = navigator.accelerometer.watchAcceleration((a) => {
-        this.newPoint(a.x, a.y, a.z, Math.sqrt(a.x*a.x + a.y*a.y + a.z*a.z) - 9.81)
+        this.newPoint(a.x, a.y, a.z, Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z) - 9.81)
+        // If shook too hard, show a notification
+        
+        if (Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z) > 30) {
+          var currentTime = new Date().getTime(); //current time
+          var notificationTime = new Date(currentTime + 1000); //delayed time  - add 1 second
+          cordova.plugins.notification.local.schedule({
+            id: 1,
+            title: 'MobSandbox',
+            message: 'Shook too hard!',
+            date: notificationTime
+          });
+        }
       }, (e) => {
         console.log(e)
       }, {
-        frequency: 10
-      })
+          frequency: 100
+        })
     } else {
-      this.accel.x = 'Accelerometer not supported'
+      //
     }
   },
   beforeDestroy: function () {
