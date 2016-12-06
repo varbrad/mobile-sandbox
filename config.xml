@@ -31,5 +31,4 @@
     <plugin name="cordova-plugin-whitelist" />
     <plugin name="phonegap-plugin-barcodescanner" />
     <plugin name="cordova-plugin-device-motion" spec="~1.2.2" />
-    <plugin name="https://github.com/katzer/cordova-plugin-local-notifications/tree/ios10" />
 </widget>
