@@ -41,7 +41,6 @@ platforms
 plugins
 hooks
 yarn.lock
-www
 dist
 build
 release
