@@ -8,16 +8,19 @@ html(lang="en")
   body
     #app
       nav
-        .title App
+        .title
+          i.material-icons bubble_chart
+          span App
       main
-        router-view
+        transition(name="fade")
+          router-view
       footer
         router-link(to="/accel" exact)
           i.material-icons compare_arrows
           br
           | Accel
         router-link(to="/chart" exact)
-          i.material-icons insert_chart
+          i.material-icons show_chart
           br
           | Chart
         router-link(to="/test2" exact)

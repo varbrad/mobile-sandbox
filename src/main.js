@@ -26,6 +26,7 @@ const vm = new Vue({
 if (window.cordova) {
   document.addEventListener('deviceready', () => {
     vm.$mount('#app')
+    console.log('Device Ready')
   })
 } else {
   vm.$mount('#app')
