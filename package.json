@@ -8,12 +8,14 @@
   "author": "Brad Davies <varbrad@users.noreply.github.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "bundle": "webpack -p --progress",
+    "bundle": "webpack --progress",
     "dev-server": "webpack-dev-server",
     "cordova-init": "cordova platform add android",
     "android": "npm run bundle && cordova run android"
   },
   "dependencies": {
+    "backendless": "^3.1.22",
+    "moment": "^2.17.1",
     "vue": "^2.1.10",
     "vue-router": "^2.2.0"
   },

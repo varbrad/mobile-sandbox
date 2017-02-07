@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Dosis", sans-serif;
+}
+
+#app {
+  padding: 1rem;
+}
+
+hr {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+input {
+  height: 2rem;
+  line-height: 2rem;
+}
+
+button.addTask, button.deleteAll {
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 .5rem;
+  border-radius: 0 5px 5px 0;
+  background-color: white;
+  color: black;
+  border: 1px solid #aaa;
+}
+
+button.deleteAll {
+  background: #ff6666;
+  border-radius: 5px;
+  margin-left: .5rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.task {
+  cursor: default;
+  display: inline-block;
+  transition: all .3s ease-out;
+  margin: .25rem;
+  padding: .5rem;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1), 0 0px 3px rgba(0, 0, 0, .2);
+  animation: fade-in .5s linear 1;
+
+  > .date {
+    display: block;
+    font-size: .7rem;
+  }
+
+  > .modify {
+    background: darkblue;
+    color: white;
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+  }
+
+  > .delete {
+    background: red;
+    color: white;
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+  }
+
+  &.completed {
+    background-color: #33ff44;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

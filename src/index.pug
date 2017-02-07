@@ -6,5 +6,13 @@ html(lang="en")
     title Mobile Sandbox
   body
     #app
-      h1 Hello
+      input(v-model="newTask")
+      button.addTask(@click="submitTask") Add Task
+      hr
+      p.task(v-for="task in tasks" v-bind:class="{ completed: task.completed }")
+        | {{ task.name }}
+        span.date Added {{ formatedDate(task.created) }}
+        button.modify(@click="modifyTask(task)") {{ task.completed ? '&#x2716;' : '&#x2714;' }}
+        button.delete(@click="deleteTask(task)") Delete Task
+
     script(src="cordova.js")
