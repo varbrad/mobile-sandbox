@@ -8,6 +8,9 @@ html(lang="en")
     #app
       input(v-model="newTask")
       button.addTask(@click="submitTask") Add Task
+      button(@click="setFilter('all')") All Filter
+      button(@click="setFilter('false')") Only Unfinished Filter
+      button(@click="setFilter('true')") Only Finished Filter
       hr
       p.task(v-for="task in tasks" v-bind:class="{ completed: task.completed }")
         | {{ task.name }}

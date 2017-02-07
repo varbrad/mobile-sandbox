@@ -13,7 +13,7 @@ backendless.initApp(
 
 const moment = require('moment')
 
-function Tasks(name) {
+function Tasks (name) {
   this.name = name
   this.completed = false
 }
@@ -21,7 +21,8 @@ function Tasks(name) {
 const vm = new Vue({
   data: {
     tasks: [],
-    newTask: ''
+    newTask: '',
+    filter: 'all'
   },
   methods: {
     submitTask: function () {
@@ -40,11 +41,19 @@ const vm = new Vue({
     },
     loadTasks: function () {
       let query = new backendless.DataQuery()
+      switch (this.filter) {
+        case 'true': query.condition = 'completed = true'; break
+        case 'false': query.condition = 'completed = false'; break
+      }
       query.options = {
         sortBy: ['name ASC'],
         pageSize: 50
       }
       this.tasks = backendless.Persistence.of(Tasks).find(query).data
+    },
+    setFilter: function (filter) {
+      this.filter = filter
+      this.loadTasks()
     },
     formatedDate: function (timestamp) {
       return moment(timestamp).fromNow()
